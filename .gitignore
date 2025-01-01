@@ -62,3 +62,8 @@ debug.log
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Rust
+/rust/target/
+**/*.rs.bk
+Cargo.lock
