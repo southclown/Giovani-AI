@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background gradient -->
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0F2027;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#203A43;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2C5364;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Neural network pattern -->
+        <pattern id="neural" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="1" fill="#ffffff" opacity="0.3"/>
+            <line x1="25" y1="25" x2="50" y2="25" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+            <line x1="25" y1="25" x2="25" y2="50" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+        </pattern>
+        
+        <!-- Glow effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Main background -->
+    <rect width="1280" height="640" fill="url(#grad1)"/>
+    
+    <!-- Neural network background pattern -->
+    <rect width="1280" height="640" fill="url(#neural)"/>
+
+    <!-- Abstract AI visualization -->
+    <g transform="translate(640, 320)" filter="url(#glow)">
+        <!-- Central hexagon -->
+        <path d="M0,-100 L86.6,-50 L86.6,50 L0,100 L-86.6,50 L-86.6,-50 Z" 
+              fill="none" stroke="#4facfe" stroke-width="2"/>
+        
+        <!-- Orbiting particles -->
+        <circle r="10" fill="#4facfe">
+            <animateMotion dur="3s" repeatCount="indefinite"
+                path="M0,-150 A150,150 0 1,1 0,150 A150,150 0 1,1 0,-150 Z"/>
+        </circle>
+        <circle r="8" fill="#00f2fe">
+            <animateMotion dur="4s" repeatCount="indefinite"
+                path="M0,-120 A120,120 0 1,0 0,120 A120,120 0 1,0 0,-120 Z"/>
+        </circle>
+        <circle r="6" fill="#19fff7">
+            <animateMotion dur="5s" repeatCount="indefinite"
+                path="M0,-180 A180,180 0 1,1 0,180 A180,180 0 1,1 0,-180 Z"/>
+        </circle>
+    </g>
+
+    <!-- Main title with modern gradient -->
+    <g filter="url(#glow)">
+        <text x="640" y="240" font-family="Arial, sans-serif" font-size="82" font-weight="bold" fill="url(#grad1)" text-anchor="middle" style="letter-spacing: 4px;">
+            GIOVANI AI
+        </text>
+        <text x="640" y="320" font-family="Arial, sans-serif" font-size="36" fill="#4facfe" text-anchor="middle" style="letter-spacing: 2px;">
+            NEXT-GEN GEOGUESSR ASSISTANT
+        </text>
+    </g>
+
+    <!-- Decorative lines -->
+    <path d="M100,540 Q640,440 1180,540" stroke="#4facfe" stroke-width="2" fill="none" opacity="0.3"/>
+    <path d="M100,560 Q640,460 1180,560" stroke="#00f2fe" stroke-width="2" fill="none" opacity="0.2"/>
+    <path d="M100,580 Q640,480 1180,580" stroke="#19fff7" stroke-width="2" fill="none" opacity="0.1"/>
+</svg>

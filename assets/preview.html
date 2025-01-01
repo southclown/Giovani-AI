@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovani AI - Repository Preview</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .preview-container {
+            background: linear-gradient(135deg, #0d1117, #161b22);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 1280px;
+            height: 640px;
+            padding: 64px;
+            position: relative;
+            transform: scale(0.5);
+            transform-origin: top left;
+        }
+
+        .content {
+            display: flex;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .logo {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #00f2c3, #0098f0);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo svg {
+            width: 160px;
+            height: 160px;
+            fill: white;
+        }
+
+        .info {
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 96px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+            color: #0098f0;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -8px;
+            height: 4px;
+            background: linear-gradient(90deg, #00f2c3, #0098f0);
+            border-radius: 2px;
+        }
+
+        .description {
+            font-size: 32px;
+            line-height: 1.5;
+            margin: 32px 0 48px;
+            color: #8b949e;
+            max-width: 800px;
+        }
+
+        .features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .features li {
+            color: #c9d1d9;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .features li::before {
+            content: "→";
+            color: #00f2c3;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tech {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #00f2c3;
+            background: rgba(0, 242, 195, 0.1);
+            border: 1px solid rgba(0, 242, 195, 0.2);
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="content">
+            <div class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                </svg>
+            </div>
+            <div class="info">
+                <h1>Giovani AI</h1>
+                <p class="description">
+                    Next-generation GeoGuessr assistant powered by advanced AI technology for precise location prediction
+                </p>
+                <ul class="features">
+                    <li>Computer Vision Analysis</li>
+                    <li>Real-time Processing</li>
+                    <li>Multi-Language Support</li>
+                    <li>High Accuracy Rate</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">Advanced AI</span>
+                    <span class="tech">Computer Vision</span>
+                    <span class="tech">Deep Learning</span>
+                    <span class="tech">Neural Networks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="download-btn" onclick="downloadImage(); return false;">Download Preview Image</a>
+
+    <script>
+        async function downloadImage() {
+            const container = document.querySelector('.preview-container');
+            
+            try {
+                const canvas = await html2canvas(container, {
+                    backgroundColor: '#0d1117',
+                    width: 1280,
+                    height: 640,
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    onclone: function(clonedDoc) {
+                        const clonedContainer = clonedDoc.querySelector('.preview-container');
+                        clonedContainer.style.transform = 'none';
+                    }
+                });
+
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'giovani-ai-preview.png';
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }, 100);
+                }, 'image/png', 1.0);
+            } catch (error) {
+                console.error('Error generating image:', error);
+                alert('Error generating image. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
