@@ -1,0 +1,64 @@
+# Dependencies
+/node_modules
+/package-lock.json
+/yarn.lock
+
+# Build outputs
+/dist
+/build
+/out
+/release
+*.exe
+*.dll
+*.so
+*.dylib
+
+# C++ build
+/cpp/build/
+/cpp/out/
+/cpp/lib/
+/cpp/*.o
+/cpp/*.obj
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# Testing
+/coverage
+/test-results
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+.cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
